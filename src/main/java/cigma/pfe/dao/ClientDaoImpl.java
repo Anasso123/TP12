@@ -8,7 +8,6 @@ import javax.persistence.Persistence;
 
 public class ClientDaoImpl implements IClientDao {
     IClientDao iClientDao;
-
     EntityManagerFactory emf= Persistence.createEntityManagerFactory("unit_clients");
     EntityManager em =emf.createEntityManager();
 
@@ -17,7 +16,7 @@ public class ClientDaoImpl implements IClientDao {
     @Override
     public Client save(Client c) {
         em.getTransaction().begin();
-        em.persist(c);
+        em.merge(c);
         em.getTransaction().commit();
         return null;
     }
