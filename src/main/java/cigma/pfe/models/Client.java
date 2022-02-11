@@ -5,14 +5,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.lang.annotation.Inherited;
 import java.util.List;
 
 @Getter
 @Setter
 @Entity(name = "TClients")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@DiscriminatorColumn(name = "client_type")
+@DiscriminatorValue("client")
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
     @Column(name = "Nom")
