@@ -12,7 +12,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
             <property name="javax.persistence.jdbc.password" value="AMNASS123"
             />
             <property name="javax.persistence.jdbc.driver"
-                      value="com.mysql.jdbc.Driver" />
+                      value="com.mysql.cj.jdbc.Driver" />
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.hbm2ddl.auto" value="create" />

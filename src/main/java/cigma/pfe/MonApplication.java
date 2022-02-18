@@ -31,5 +31,26 @@ public class MonApplication {
         client.setCarteFidelio(carteFidelio);
 
         ctrl.save(client);
+
+        Client client1 = new Client("Omar");
+        Client client2 = new Client("Said");
+        Client client3 = new Client("Ahmed");
+
+        client1=ctrl.save(client1);
+        client2=ctrl.save(client2);
+        client3=ctrl.save(client3);
+
+        ctrl.getAll().stream()
+                .forEach(i-> System.out.println(i));
+
+        System.out.println(ctrl.getOne(1));
+
+        client1.setName("Hassan");
+        ctrl.modify(client1);
+
+        ctrl.remove(2);
+
+        ctrl.getAll().stream()
+                .forEach(i-> System.out.println(i));
     }
 }
