@@ -21,4 +21,6 @@ public class CompanyId implements Serializable {
     public int hashCode() {
         return Objects.hash(rc, idTribunal);
     }
+
+    public CompanyId(){}
 }

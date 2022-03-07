@@ -11,4 +11,6 @@ public class ContactPerson {
     private String lastName;
     private String phone;
 
+    public ContactPerson(){}
+
 }

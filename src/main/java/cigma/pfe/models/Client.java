@@ -1,11 +1,7 @@
 package cigma.pfe.models;
-
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
-import java.lang.annotation.Inherited;
 import java.util.List;
 
 @Getter
@@ -24,7 +20,7 @@ public class Client {
 
     @OneToMany(cascade = {CascadeType.MERGE},mappedBy = "client")
     private List<Facture> factures;
-    @ManyToMany(cascade = {CascadeType.MERGE})
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "my_join_table_client_promotion",joinColumns = @JoinColumn(
             name = "client_fk",referencedColumnName = "id"
     ),
@@ -34,7 +30,7 @@ public class Client {
     )
     )
     private List<Promotion> promotions;
-    @OneToOne(cascade = {CascadeType.MERGE},mappedBy = "client")
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "client")
     private CarteFidelio carteFidelio;
 
     public Client(long id, String name) {
@@ -47,5 +43,16 @@ public class Client {
 
     public Client(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", factures=" + factures +
+                ", promotions=" + promotions +
+                ", carteFidelio=" + carteFidelio +
+                '}';
     }
 }

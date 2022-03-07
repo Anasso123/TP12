@@ -1,18 +1,14 @@
 package cigma.pfe.models;
 
 
-import com.sun.jdi.event.ClassUnloadEvent;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 @Data
 
-@NoArgsConstructor
 
 public class ClientNormal extends Client {
     private int importanceLevel;
@@ -21,4 +17,6 @@ public class ClientNormal extends Client {
         super(name);
         this.importanceLevel = importanceLevel;
     }
+
+    public ClientNormal(){}
 }

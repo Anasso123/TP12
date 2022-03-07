@@ -6,7 +6,6 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@IdClass(CompanyId.class)
 public class Company {
     @EmbeddedId
     private CompanyId id;
@@ -21,4 +20,6 @@ public class Company {
     @AttributeOverride(name = "phone", column = @Column(name =
             "PHONE_PERSON"))
     private ContactPerson contactPerson;
+
+    public Company(){}
 }

@@ -31,4 +31,5 @@ public class Facture {
     public String getAmount(){
         return amount;
     }
+
 }

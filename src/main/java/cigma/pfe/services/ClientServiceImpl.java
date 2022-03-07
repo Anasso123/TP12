@@ -13,10 +13,6 @@ public class ClientServiceImpl implements IClientService {
     @Autowired
     private IClientDao iClientDao;
 
-    public ClientServiceImpl(){
-        System.out.println("creation bean dao");
-    }
-
     @Override
     @Transactional
     public Client save(Client c) {
@@ -43,7 +39,4 @@ public class ClientServiceImpl implements IClientService {
     }
 
 
-    public IClientDao getiClientDao() {
-        return iClientDao;
-    }
 }

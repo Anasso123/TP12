@@ -10,7 +10,6 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Entity
 @Data
 
-@NoArgsConstructor
 public class ClientVip extends Client{
     private String preferences;
 
@@ -18,4 +17,6 @@ public class ClientVip extends Client{
         super(name);
         this.preferences = preferences;
     }
+
+    public ClientVip(){}
 }
